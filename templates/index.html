@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Segmentation AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function showLoading() {
+            document.getElementById("progress-bar").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <h1 class="title gradient-text">💧 Water Segmentation AI</h1>
+            <p class="subtitle">Upload one or more satellite images and experience powerful AI segmentation.</p>
+        </header>
+
+        <form method="post" enctype="multipart/form-data" class="upload-form" onsubmit="showLoading()">
+            <div class="upload-area pulse" onclick="document.getElementById('file-upload').click();">
+                <p class="upload-text">📂 Drag & Drop or Click to Upload (Multiple Allowed)</p>
+            </div>
+            <input id="file-upload" type="file" name="files" multiple required>
+            <button type="submit" class="btn bounce">🚀 Predict</button>
+        </form>
+
+        <div id="progress-bar" class="animation-bar" style="display:none;">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>
+            Made with ❤️ by <b>Basel Amr Barakat</b><br>
+            <a href="https://github.com/Basel-Amr" target="_blank">🐙 GitHub</a> |
+            <a href="https://www.linkedin.com/in/baselamrbarakat/" target="_blank">💼 LinkedIn</a> |
+            <a href="mailto:baselamr52@gmail.com" target="_blank">📧 Email</a>
+        </p>
+    </footer>
+</body>
+</html>

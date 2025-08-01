@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <h1 class="title gradient-text">Segmentation Results</h1>
+        </header>
+
+        {% for res in results %}
+        <div class="result-block slide-up">
+            <h2 class="result-title">📂 {{ res.name }}</h2>
+            <img src="{{ res.image }}" class="result-image shadow">
+            <a href="{{ url_for('static', filename='results/' + res.name.split('.')[0] + '_mask.png') }}" 
+               download class="btn download-btn pulse">⬇ Download Mask</a>
+        </div>
+        {% endfor %}
+
+        <a href="/" class="btn back-btn bounce">⬅ Upload Again</a>
+    </div>
+    <footer class="footer">
+        <p>
+            Made with ❤️ by <b>Basel Amr Barakat</b><br>
+            <a href="https://github.com/Basel-Amr" target="_blank">🐙 GitHub</a> |
+            <a href="https://www.linkedin.com/in/baselamrbarakat/" target="_blank">💼 LinkedIn</a> |
+            <a href="mailto:baselamr52@gmail.com" target="_blank">📧 Email</a>
+        </p>
+    </footer>
+</body>
+</html>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
